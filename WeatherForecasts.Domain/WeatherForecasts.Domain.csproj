@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Castle.Windsor" Version="5.1.2" />
+    <PackageReference Include="Castle.Windsor.Extensions.DependencyInjection" Version="5.1.2" />
+  </ItemGroup>
+
 </Project>

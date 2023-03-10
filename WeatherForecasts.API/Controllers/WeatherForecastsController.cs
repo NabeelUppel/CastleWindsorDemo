@@ -9,9 +9,9 @@ namespace WeatherForecasts.API.Controllers
     public class WeatherForecastController : ControllerBase
     {
         private readonly ILogger<WeatherForecastController> _logger;
-        private readonly IWeatherForecastService _weatherForecastService;
+        private readonly IWeatherForecastsService _weatherForecastService;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger, IWeatherForecastService weatherForecastService)
+        public WeatherForecastController(ILogger<WeatherForecastController> logger, IWeatherForecastsService weatherForecastService)
         {
             _logger = logger;
             _weatherForecastService = weatherForecastService;

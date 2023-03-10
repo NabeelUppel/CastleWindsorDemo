@@ -2,7 +2,7 @@
 
 namespace WeatherForecasts.Domain.Abstractions
 {
-    public interface IWeatherForecastService
+    public interface IWeatherForecastsService
     {
         List<WeatherForecast> ProcessFTemprature();
     }

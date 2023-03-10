@@ -2,7 +2,7 @@
 
 namespace WeatherForecasts.Domain.Abstractions
 {
-    public interface IWeatherForecastRepository
+    public interface IWeatherForecastsRepository
     {
         WeatherForecast[] GetForecasts();
     }

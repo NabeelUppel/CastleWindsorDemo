@@ -1,12 +1,13 @@
-using WeatherForecasts.DataAccess.Repositories;
-using WeatherForecasts.Domain.Abstractions;
-using WeatherForecasts.Service.Services;
+using Castle.Windsor;
+using WeatherForecasts.API.Installers;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddScoped<IWeatherForecastRepository, WeatherForecastRepository>();
-builder.Services.AddScoped<IWeatherForecastService, WeatherForescastService>();
+var container = new WindsorContainer();
+builder.Host.UseWindsorContainerServiceProvider(container);
+container.Install(new MyInstaller());
+
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -14,8 +15,6 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
-
-
 
 
 // Configure the HTTP request pipeline.

@@ -3,7 +3,7 @@ using WeatherForecasts.Domain.Models;
 
 namespace WeatherForecasts.DataAccess.Repositories
 {
-    public class WeatherForecastRepository : IWeatherForecastRepository
+    public class WeatherForecastsRepository : IWeatherForecastsRepository
     {
         private static readonly string[] Summaries = new[]
         {
