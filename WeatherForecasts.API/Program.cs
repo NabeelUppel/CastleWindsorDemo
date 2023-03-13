@@ -1,4 +1,5 @@
 using Castle.Windsor;
+using Castle.Windsor.Installer;
 using WeatherForecasts.API.Installers;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,7 +7,11 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 var container = new WindsorContainer();
 builder.Host.UseWindsorContainerServiceProvider(container);
-container.Install(new MyInstaller());
+//container.Install(new MyInstaller());
+
+//XML Configuration
+container.Install(Configuration.FromXmlFile("CWConfiguration.xml"));
+
 
 
 builder.Services.AddControllers();

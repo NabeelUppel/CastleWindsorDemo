@@ -3,10 +3,10 @@ using WeatherForecasts.Domain.Models;
 
 namespace WeatherForecasts.Service.Services
 {
-    public class WeatherForescastsService : IWeatherForecastsService
+    public class WeatherForecastsService : IWeatherForecastsService
     {
         private readonly IWeatherForecastsRepository _weatherForecastRepository;
-        public WeatherForescastsService(IWeatherForecastsRepository weatherForecastRepository)
+        public WeatherForecastsService(IWeatherForecastsRepository weatherForecastRepository)
         {
             _weatherForecastRepository = weatherForecastRepository;
         }

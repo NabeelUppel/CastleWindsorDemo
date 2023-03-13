@@ -1,0 +1,7 @@
+<configuration>
+	<installers>
+		<install type="WeatherForecasts.API.Installers.ServiceInstaller, WeatherForecasts.API"/>
+		<install type="WeatherForecasts.API.Installers.RepositoryInstaller, WeatherForecasts.API"/>
+		<install assembly="WeatherForecasts.API"/>
+	</installers>
+</configuration>
