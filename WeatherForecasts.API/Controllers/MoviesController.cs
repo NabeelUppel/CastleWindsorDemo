@@ -2,7 +2,6 @@
 using WeatherForecasts.API.DTOs;
 using WeatherForecasts.Domain.Abstractions;
 using WeatherForecasts.Domain.Models;
-using WeatherForecasts.Service.MediaServices;
 
 namespace WeatherForecasts.API.Controllers
 {
