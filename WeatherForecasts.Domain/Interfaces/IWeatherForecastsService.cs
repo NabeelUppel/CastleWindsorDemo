@@ -1,6 +1,6 @@
 ﻿using WeatherForecasts.Domain.Models;
 
-namespace WeatherForecasts.Domain.Abstractions
+namespace WeatherForecasts.Domain.Interfaces
 {
     public interface IWeatherForecastsService
     {

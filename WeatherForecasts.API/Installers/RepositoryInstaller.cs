@@ -2,7 +2,7 @@
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
 using WeatherForecasts.DataAccess.Repositories;
-using WeatherForecasts.Domain.Abstractions;
+using WeatherForecasts.Domain.Interfaces;
 
 namespace WeatherForecasts.API.Installers
 {

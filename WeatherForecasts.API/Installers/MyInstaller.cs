@@ -1,12 +1,11 @@
 ﻿using Castle.MicroKernel.Registration;
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
-using FluentAssertions.Types;
-using Microsoft.VisualBasic;
-using System.Diagnostics;
-using WeatherForecasts.DataAccess.Repositories;
+using WeatherForecasts.DataAccess.MediaRepositories;
 using WeatherForecasts.Domain.Abstractions;
-using WeatherForecasts.Service.Services;
+using WeatherForecasts.Domain.MediaInterfaces;
+using WeatherForecasts.Domain.Models;
+using WeatherForecasts.Service.MediaServices;
 
 namespace WeatherForecasts.API.Installers
 {
@@ -18,21 +17,28 @@ namespace WeatherForecasts.API.Installers
             //container.Register(Component.For<IWeatherForecastsRepository>().ImplementedBy<WeatherForecastsRepository>().LifestyleTransient());
             //container.Register(Component.For<IWeatherForecastsService>().ImplementedBy<WeatherForecastsService>().LifestyleTransient());
 
+            //Injection into MediaServices into Controllers based on Names
+            container.Register(Component.For(typeof(MediaBaseService<Movie>)).ImplementedBy(typeof(MovieService)).Named("MovieService"));
+            container.Register(Component.For(typeof(MediaBaseService<TVShow>)).ImplementedBy(typeof(TVShowService)).Named("TVShowService"));
+
+            //Inject Generic MediaRepository into MediaServices... Implicitly figures out the classes?? 
+            container.Register(Component.For(typeof(IGenericRepository<>)).ImplementedBy(typeof(GenericRepository<>)));
 
             // Need to register each assembly and namespace
             container.Register(Classes.FromAssemblyNamed("WeatherForecasts.DataAccess")
                 .InNamespace("WeatherForecasts.DataAccess.Repositories")
-                .WithServiceDefaultInterfaces());
+                .WithServiceDefaultInterfaces()
+                );
 
             container.Register(Classes.FromAssemblyNamed("WeatherForecasts.Service")
                 .InNamespace("WeatherForecasts.Service.Services")
-                .WithServiceDefaultInterfaces());
+                .WithServiceDefaultInterfaces()
+                );
 
             container.Register(Classes.FromAssemblyNamed("WeatherForecasts.Domain")
-                .InNamespace("WeatherForecasts.Domain.Abstractions")
-                .WithServiceDefaultInterfaces());
-
-                
+                .InNamespace("WeatherForecasts.Domain.Interfaces")
+                .WithServiceDefaultInterfaces()
+                );
         }
     }
 }

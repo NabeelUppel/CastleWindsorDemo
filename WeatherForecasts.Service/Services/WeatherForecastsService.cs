@@ -1,4 +1,4 @@
-﻿using WeatherForecasts.Domain.Abstractions;
+﻿using WeatherForecasts.Domain.Interfaces;
 using WeatherForecasts.Domain.Models;
 
 namespace WeatherForecasts.Service.Services
