@@ -12,8 +12,8 @@ namespace CastleWindsorDemo.API.Installers
         public void Install(IWindsorContainer container, IConfigurationStore store)
         {
             // Manual Method
-            container.Register(Component.For<IWeatherForecastsRepository>().ImplementedBy<WeatherForecastsRepository>().LifestyleTransient());
-            container.Register(Component.For<IWeatherForecastsService>().ImplementedBy<WeatherForecastsService>().LifestyleTransient());
+            //container.Register(Component.For<IWeatherForecastsRepository>().ImplementedBy<WeatherForecastsRepository>().LifestyleTransient());
+            //container.Register(Component.For<IWeatherForecastsService>().ImplementedBy<WeatherForecastsService>().LifestyleTransient());
 
             // Auto register all classes in the names spaces using conventions
             // Need to register each assembly and namespace

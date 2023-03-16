@@ -10,9 +10,9 @@ namespace CastleWindsorDemo.API.Controllers
     public class MoviesController : ControllerBase
     {
         private readonly ILogger<MoviesController> _logger;
-        private readonly MediaBaseService<Movie> _movieService;
+        private readonly IMediaBaseService<Movie> _movieService;
 
-        public MoviesController(ILogger<MoviesController> logger, MediaBaseService<Movie> movieService)
+        public MoviesController(ILogger<MoviesController> logger, IMediaBaseService<Movie> movieService)
         {
             _logger = logger;
             _movieService = movieService;

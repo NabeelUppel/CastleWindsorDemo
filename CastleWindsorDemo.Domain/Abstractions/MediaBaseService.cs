@@ -3,7 +3,7 @@ using CastleWindsorDemo.Domain.Models;
 
 namespace CastleWindsorDemo.Domain.Abstractions
 {
-    public abstract class MediaBaseService<T> where T : MediaBaseEntity
+    public class MediaBaseService<T> : IMediaBaseService<T> where T : MediaBaseEntity
     {
         private readonly IGenericRepository<T> _genericRepository;
 

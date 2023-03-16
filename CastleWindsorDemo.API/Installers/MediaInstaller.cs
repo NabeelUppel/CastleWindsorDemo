@@ -23,8 +23,7 @@ namespace CastleWindsorDemo.API.Installers
             container.Register(Component.For<AppDbContext>().DependsOn(Property.ForKey("connectionString").Eq(connectionStrings.Default)));
 
             //Injection into MediaServices into Controllers based on Names
-            container.Register(Component.For(typeof(MediaBaseService<Movie>)).ImplementedBy(typeof(MovieService)).Named("MovieService"));
-            container.Register(Component.For(typeof(MediaBaseService<TVShow>)).ImplementedBy(typeof(TVShowService)).Named("TVShowService"));
+            container.Register(Component.For(typeof(IMediaBaseService<>)).ImplementedBy(typeof(MediaBaseService<>)));
 
 
             //Inject Generic MediaRepository into MediaServices... Implicitly figures out the classes?? 
