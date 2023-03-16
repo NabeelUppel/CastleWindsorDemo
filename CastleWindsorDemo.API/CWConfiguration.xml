@@ -1,0 +1,10 @@
+<configuration>
+	<installers>
+		<!--Installs installer specified by the class name--> 
+		<!--<install type="CastleWindsorDemo.API.Installers.ServiceInstaller, CastleWindsorDemo.API"/>
+		<install type="CastleWindsorDemo.API.Installers.RepositoryInstaller, CastleWindsorDemo.API"/>-->
+
+		<!--Installs all installers within a specified assembly-->
+		<install assembly="CastleWindsorDemo.API"/>
+	</installers>
+</configuration>
